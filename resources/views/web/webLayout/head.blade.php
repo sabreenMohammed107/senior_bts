@@ -8,20 +8,20 @@
 	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('adminasset/img/logo/150.jpg')}}">
 
 
-	<link href="{{ asset('webasset/css/animate.css')}}" rel="stylesheet" />
-	<link href="{{ asset('webasset/css/bootstrap.css')}}" rel="stylesheet" />
-	<link href="{{ asset('webasset/css/font-awesome.min.css')}}" rel="stylesheet" />
-	<link href="{{ asset('webasset/css/fonts-googleapis.css')}}" rel="stylesheet" />
-	<link href="{{ asset('webasset/css/jquery-ui.css')}}" rel="stylesheet" />
-	<link href="{{ asset('webasset/css/linearicons.css')}}" rel="stylesheet" />
-	<link href="{{ asset('webasset/css/magnific-popup.css')}}" rel="stylesheet" />
-	<link href="{{ asset('webasset/css/main.css')}}" rel="stylesheet" />
-	<link href="{{ asset('webasset/css/nice-select.css')}}" rel="stylesheet" />
-	<link href="{{ asset('webasset/css/owl.carousel.css')}}" rel="stylesheet" />
+	<link href="{{ asset('public/webasset/css/animate.css')}}" rel="stylesheet" />
+	<link href="{{ asset('public/webasset/css/bootstrap.css')}}" rel="stylesheet" />
+	<link href="{{ asset('public/webasset/css/font-awesome.min.css')}}" rel="stylesheet" />
+	<link href="{{ asset('public/webasset/css/fonts-googleapis.css')}}" rel="stylesheet" />
+	<link href="{{ asset('public/webasset/css/jquery-ui.css')}}" rel="stylesheet" />
+	<link href="{{ asset('public/webasset/css/linearicons.css')}}" rel="stylesheet" />
+	<link href="{{ asset('public/webasset/css/magnific-popup.css')}}" rel="stylesheet" />
+	<link href="{{ asset('public/webasset/css/main.css')}}" rel="stylesheet" />
+	<link href="{{ asset('public/webasset/css/nice-select.css')}}" rel="stylesheet" />
+	<link href="{{ asset('public/webasset/css/owl.carousel.css')}}" rel="stylesheet" />
 	
-	<link href="{{ asset('webasset/fonts/fontawesome-free-5.10.1-web/css/all.css')}}" rel="stylesheet" />
-		<link href="{{ asset('webasset/css/style.css')}}" rel="stylesheet" />
-	<link href="{{ asset('webasset/css/intro.css')}}" rel="stylesheet" />
+	<link href="{{ asset('public/webasset/fonts/fontawesome-free-5.10.1-web/css/all.css')}}" rel="stylesheet" />
+		<link href="{{ asset('public/webasset/css/style.css')}}" rel="stylesheet" />
+	<link href="{{ asset('public/webasset/css/intro.css')}}" rel="stylesheet" />
 	  <!--Search sabreen-->
 	@yield('style')
 
