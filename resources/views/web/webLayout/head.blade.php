@@ -7,8 +7,8 @@
 	<meta name="BTS" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta property="og:title" content="BTS Website" />
 	<!-- NEXT LINE Even if page is dynamically generated and URL contains query parameters -->
-	<meta property="og:url" content="https://btsconsultant.com" />
-	<meta property="og:image" content="http://convertaholics.com/convertaholics-og.png" />
+	<meta property="og:url" content="http://bts.seniorsteps.net" />
+	<meta property="og:image" content="{{ asset('adminasset/img/logo/150.jpg')}}" />
 	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('adminasset/img/logo/150.jpg')}}">
 
 
