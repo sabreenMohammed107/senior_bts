@@ -39,7 +39,7 @@
 				<a href="#" class="has-chevron" data-toggle="collapse" data-target="#basic-elements" aria-expanded="false" aria-controls="basic-elements">
 					<span><i class="material-icons fs-16">assignment</i>Testimonials</span>
 				</a>
-				<ul id="basic-elements" class="collapse" aria-labelledby="basic-elements" data-parent="#side-nav-accordion">
+				 <ul id="basic-elements" class="collapse" aria-labelledby="tables" data-parent="#side-nav-accordion">
 					<li> <a  href="{{ route('testimonial.index') }}">Testimonials page</a> </li>
 					<li> <a href="{{ route('gallery.index') }}">Image Gallery</a> </li>
 				</ul>
@@ -50,7 +50,7 @@
 				<a href="#" class="has-chevron" data-toggle="collapse" data-target="#contactsdropdown" aria-expanded="false" aria-controls="contactsdropdown">
 					<span><i class="material-icons fs-16">assignment</i>Clients</span>
 				</a>
-					<ul id="contactsdropdown" class="collapse" aria-labelledby="basic-elements" data-parent="#side-nav-accordion">
+					  <ul id="contactsdropdown" class="collapse" aria-labelledby="tables" data-parent="#side-nav-accordion">
 			
 
 					<li> <a href="{{ route('applCourse.index') }}">Courses Applicants</a> </li>

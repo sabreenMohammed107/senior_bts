@@ -23,6 +23,20 @@
 add_chatinline(); </script>
 <!--Select date-->
 <script>
+    $('#refresh').click(function() {
+
+        $.ajax({
+            type: 'GET',
+            url: "{{route('refreshcaptcha')}}",
+
+            success: function(data) {
+
+                $(".captcha span").html(data.captcha);
+            }
+        });
+    });
+</script>
+<script>
 
 
 

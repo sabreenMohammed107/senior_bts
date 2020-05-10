@@ -48,6 +48,7 @@ class IndexController extends Controller
     public function sendMessage(Request $request){
       
         try{
+          
             
             $user=  ContactMessage::create($request->all());
             $emails = ['senior.steps.info@gmail.com','info@btsconsultant.com','nasser@btsconsultant.com'];
@@ -66,6 +67,11 @@ class IndexController extends Controller
         }
     
      
+    }
+    public function refreshCaptcha()
+    {
+      
+        return response()->json(['captcha'=> captcha_img()]);
     }
 
     public function sendNewsLetter(Request $request){

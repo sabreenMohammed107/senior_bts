@@ -300,6 +300,10 @@ if(!empty($request->get("wordName"))){
 
     public function registerApplicants(Request $request)
     {
+        $request->validate([
+          
+            'captcha' => 'required|captcha'
+        ]);
         $data = $request->all();
        $quick= Applicant::create($data);
        $emails = ['senior.steps.info@gmail.com','info@btsconsultant.com','nasser@btsconsultant.com'];
@@ -308,11 +312,15 @@ if(!empty($request->get("wordName"))){
        
           if (!$request->get('courseBrochure')) {
             return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
-        }
+       }
     }
-    
+   
     public function registerApplicantsDawnload(Request $request)
     {
+        $request->validate([
+          
+            'captcha' => 'required|captcha'
+        ]);
         $data = $request->all();
        $dawnload= Applicant::create($data);
       
@@ -364,6 +372,10 @@ if(!empty($request->get("wordName"))){
 
     public function registerApplicantRounds(Request $request)
     {
+        $request->validate([
+          
+            'captcha' => 'required|captcha'
+        ]);
         $applicant_data['salut_id']=$request->get('salut_id');
         $applicant_data['name']=$request->get('name');
         $applicant_data['country_id']=$request->get('country_id');
@@ -395,9 +407,14 @@ if(!empty($request->get("wordName"))){
  
          \Mail::to($emails)->send(new RegisterNotification($applicant_id,$billingDetails));
         return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
+    
     }
 
-
+    public function refreshCaptcha()
+    {
+      
+        return response()->json(['captcha'=> captcha_img()]);
+    }
 
     public function reducedForm(Request $request){
         $request->validate([

@@ -100,7 +100,7 @@
 }
 
 .gradient {
-  /* background-image: radial-gradient( circle at 36% 48%, #000000, rgba(11, 39, 65, 0.32) 87%, rgba(0, 0, 0, 0.0)); */
+  background-image: radial-gradient( circle at 36% 48%, #000000, rgba(11, 39, 65, 0.32) 87%, rgba(0, 0, 0, 0.0));
   background: rgba(17, 9, 62, 0.27) none repeat scroll 0 0;
   width: 100%;
   top:0;
@@ -117,28 +117,10 @@
 	
 		<!-- <div class="overlay overlay-bg"> -->
 	
-		<div class="wrapper">
+		<div class="wrapper" >
 		
-  <!-- <div class="gradient"> -->
-  
-			<!-- <div class="row fullscreen d-flex align-items-center justify-content-between" style="margin:auto !important; "> -->
-			<!-- <div class="row  d-flex align-items-center justify-content-between" style="margin:auto !important; "> -->
-			<div class="banner-content col-lg-9 col-md-12" style="margin:auto !important;position: absolute;top:50% ;left:20% ">
-					<h1 class="text-uppercase" style="color:#fff;font-size:30px;margin-bottom:20px">
-						<!-- {{ $homeSlider->slider_en_title }} -->
-					</h1>
-					<div style="width:70% !important">
-					<mark class="" style="color:#fff;background-color: #fcf8e300;">
-						<!-- {{ $homeSlider->slider_en_subtitle }} -->
-					</mark>
-</div>
-				<!-- </div> -->
-			
-<!-- </div> -->
-		<!-- </div> -->
-  </div>
-		<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" style="background-size: cover;
-    object-fit: fill;">
+
+		<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" >
 		<source src="{{ asset('uploads/vedio')}}/{{ $homeSlider->slider_video_url }}" type="video/mp4">
 				</video>
 				
@@ -151,12 +133,12 @@
 <!--End Intro Section-->
 
 <!-- start search Area -->
-<div class="banner-area relative" id="home" style="z-index:8;">
+<div class="banner-area relative" id="home" style="z-index:8;top:20px">
 	<div id="search-section" class="search-section section-padding feature-area">
 		<div class="row" style="padding:0px;margin:0px">
 			<div class="col-lg-4 col-md-8 col-sm-12">
 				<div class="row">
-					<div style="width:250px;height:100px;background-color:#FFA500;margin:0px;padding:0px;">
+					<div style="width:250px;height:100px;background-color:#FFA500;margin:0px;padding:0px;;margin-bottom: 10px">
 						<h3 style="padding-top:10%;padding-left:10%;color:#fff">Find Your Specific Training Course</h3>
 					</div>
 					<div class="arrow-right"></div>
@@ -209,7 +191,7 @@
 <!-- End search Area -->
 
 <!-- Start feature Area -->
-<section class="feature-area2 relative" style="z-index:8;">
+<section class="feature-area2 relative" style="z-index:8;top:20px">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3">

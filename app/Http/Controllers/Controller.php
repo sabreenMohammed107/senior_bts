@@ -17,7 +17,7 @@ class Controller extends BaseController
 
     public function __construct() {
         $branch =Branch::with('country')->with('venue')->where('active', '=',1)->where('hq', '=',1)->firstOrFail();
-        $courseCategories =CourseCategory::with('courseSubCategories')->where('id', '!=',4)->where('active', '=',1)->get();
+        $courseCategories =CourseCategory::with('courseSubCategories')->where('id', '!=',4)->where('id', '!=',6)->where('active', '=',1)->get();
         View::share(['courseCategories' => $courseCategories, 'branch' => $branch]);
        
     }

@@ -26,7 +26,7 @@ Route::get('/requestInHouse/{course_id}', 'CourseController@requestInHouse');
 Route::get('/registerCourse/{round_id}','CourseController@registerCourse');
 Route::post('registerApplicantRounds','CourseController@registerApplicantRounds');
 Route::post('/registerApplicantsDawnload', 'CourseController@registerApplicantsDawnload')->name('registerApplicantsDawnload');
-
+Route::get('/refreshcaptcha', 'CourseController@refreshCaptcha')->name('refreshcaptcha');
 /*-------------------------Sasa--------------------- */
 /*-------------------------My Category-------------------------*/
 Route::get('/category/{id}', 'CategoryController@index')->name('category');

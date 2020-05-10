@@ -40,8 +40,9 @@
                       <th>Action</th>
                   </tr>
               </thead>
-			  @foreach($applicants as $index => $applicant)
+			
               <tbody>
+			  @foreach($applicants as $index => $applicant)
                   <tr>
                       <td><p>{{$index +1 }}</p></td>
                       <td><p>{{$applicant->name}}</p></td>
@@ -78,7 +79,7 @@
 									</form>				                      </td>
                   </tr>
 
-              </tbody>
+            
          
 
 <!-- View Expertise Modal -->
@@ -325,6 +326,7 @@
       
       <!--  Setup  -->
 	  @endforeach
+	  </tbody>
 	  </table>
       </div>
     </div>

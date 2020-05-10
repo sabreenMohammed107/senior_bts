@@ -37,8 +37,8 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        $subCategories=CourseSubCategory::where('course_category_id', '!=',4)->with('courseCategory')->orderBy("created_at", "Desc")->get();
-        $categories=CourseCategory::where('id', '!=',4)->orderBy("created_at", "Desc")->get();
+        $subCategories=CourseSubCategory::where('course_category_id', '!=',4)->where('course_category_id', '!=',6)->with('courseCategory')->orderBy("created_at", "Desc")->get();
+        $categories=CourseCategory::where('id', '!=',4)->where('id', '!=',6)->orderBy("created_at", "Desc")->get();
 
         return view($this->viewName.'index', compact('subCategories','categories'));
     }
@@ -113,7 +113,7 @@ if($request->input('subcategory')=='on'){
         
         $subcategory =CourseSubCategory::where('id', '=', $id)->first();
        
-         $categories=CourseCategory::where('id', '!=',4)->get();
+         $categories=CourseCategory::where('id', '!=',4)->where('id', '!=',6)->get();
 
          return view($this->viewName.'edit', compact('categories','subcategory'));
     }

@@ -38,9 +38,9 @@
 							<th>Action</th>
 						</tr>
                     </thead>
-                    @foreach($teachCourses as $index => $teachCourse)
+                 
                     <tbody>
-  
+                    @foreach($teachCourses as $index => $teachCourse)
                       <tr>
 					  	<td>{{ $index +1 }}</td>
                         
@@ -59,7 +59,7 @@
                         </td>
                       </tr>
   
-                    </tbody>
+                   
                     <!-- Edit Expertise Modal -->
    <div class="modal fade" id="editclient{{$teachCourse->id}}" tabindex="-1" role="dialog" aria-labelledby="editclient">
     <div class="modal-dialog modal-lg " role="document">
@@ -102,6 +102,7 @@
       
       <!--  Setup  -->
       @endforeach
+      </tbody>
                   </table>
                 </div>
               </div>

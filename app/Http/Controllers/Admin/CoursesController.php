@@ -12,7 +12,7 @@ use Storage;
 use DB;
 use Log;
 use File;
-
+use Illuminate\Database\QueryException;
 class CoursesController extends Controller
 {
     protected $object;
@@ -267,30 +267,37 @@ if($request->input('course')=='on'){
         $doc_name = public_path('uploads/courseBrochure/'.$doc);
         $thumbnail = public_path('uploads/courses/'.$fileThumbnail);
       
-        if ($course->rounds()->count() ) {
+        // if ($course->rounds()->count() ) {
 
-            return redirect()->back()->with('flash_danger','You cannot delete related with another...');    
-         }  
-                $menyList=RelatedCourses::all();
-                $count=0;
-              foreach($menyList as $row){
-               if($row->course_id==$id){
+        //     return redirect()->back()->with('flash_danger','You cannot delete related with another...');    
+        //  }  
+        //         $menyList=RelatedCourses::all();
+        //         $count=0;
+        //       foreach($menyList as $row){
+        //        if($row->course_id==$id){
 
-                $count=$count+1;
+        //         $count=$count+1;
 
-                  }
+        //           }
 
-               }
+        //        }
      
-               if($count>0){
+        //        if($count>0){
 
-            return redirect()->back()->with('flash_danger','You cannot delete related with another...');    
-         }   
-       
+        //     return redirect()->back()->with('flash_danger','You cannot delete related with another...');    
+        //  }   
+        try{
             $course->delete();
                 File::delete($file_name);
                 File::delete($doc_name);
                 File::delete($thumbnail);
+
+            }
+            catch(QueryException $q){
+             
+                return redirect()->back()->with('flash_danger','You cannot delete related with another...');  
+    
+            }
                 return redirect()->route($this->routeName.'index')->with('flash_success', 'Data Has Been Deleted Successfully !');
     }
     /**

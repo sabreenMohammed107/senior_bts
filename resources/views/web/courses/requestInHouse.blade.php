@@ -70,7 +70,7 @@
                                 <label>Preferred Dates : </label>
                             </div>
                             <div class="form-group col-lg-12 col-md-12">
-                                <input type="text" name="inhouse_perefer_dates" class="form-control" />
+                                <input type="text" name="inhouse_perefer_dates" value="{{ old('inhouse_perefer_dates') }}"  class="form-control" />
                             </div>
                         </div>
                         <hr />
@@ -83,41 +83,41 @@
                                 <select name="salut_id" class="form-control" style="padding:0 ">
                                     <option value=""></option>
                                     @foreach ($saluts as $salut)
-                                    <option value='{{$salut->id}}'>
+                                    <option value='{{$salut->id}}' @if (old('salut_id')=="$salut->id" ) {{ 'selected' }} @endif>
                                         {{ $salut->en_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="form-group col-lg-6 col-md-12">
                                 <label>Full Name*</label>
-                                <input type="text" name="name" class="form-control" style="padding:8px">
+                                <input type="text" name="name" value="{{ old('name') }}" class="form-control" style="padding:8px">
                             </div>
                         </div>
                         <div class="form-group form-inline">
                             <div class="form-group col-lg-6 col-md-12">
                                 <label>Designation*</label>
-                                <input name="job_title" type="text" class="form-control" style="padding:8px">
+                                <input name="job_title" value="{{ old('job_title') }}" type="text" class="form-control" style="padding:8px">
                             </div>
                             <div class="form-group col-lg-6 col-md-12">
                                 <label>Company*</label>
-                                <input type="text" name="company" class="form-control" style="padding:8px">
+                                <input type="text" name="company"  value="{{ old('company') }}" class="form-control" style="padding:8px">
                             </div>
                         </div>
                         <div class="form-group form-inline">
                             <div class="form-group col-lg-6 col-md-12">
                                 <label>Address*</label>
-                                <input type="text" name="address" class="form-control" style="padding:8px">
+                                <input type="text" name="address" value="{{ old('address') }}" class="form-control" style="padding:8px">
                             </div>
                             <div class="form-group col-lg-6 col-md-12">
                                 <label>Phone*</label>
-                                <input type="phone" name="phone" class="form-control" style="padding:8px">
+                                <input type="phone" name="phone" value="{{ old('phone') }}" class="form-control" style="padding:8px">
                             </div>
                             <div class="form-group col-lg-6 col-md-12">
                                 <label>Country*</label>
                                 <select name="country_id" class="form-control" style="padding:0 ">
                                     <option value=""></option>
                                     @foreach ($countries as $country)
-                                    <option value='{{$country->id}}'>
+                                    <option value='{{$country->id}}' @if (old('country_id')=="$country->id" ) {{ 'selected' }} @endif>
                                         {{ $country->country_en_name }}</option>
                                     @endforeach
                                 </select>
@@ -127,7 +127,7 @@
                                 <select name="venue_id" class="form-control" style="padding:0 ">
                                     <option value=""></option>
                                     @foreach ($venues as $venue)
-                                    <option value='{{$venue->id}}'>
+                                    <option value='{{$venue->id}}' @if (old('venue_id')=="$venue->id" ) {{ 'selected' }} @endif>
                                         {{ $venue->venue_en_name }}</option>
                                     @endforeach
                                 </select>
@@ -140,11 +140,11 @@
                         <div class="form-group form-inline">
                             <div class="form-group col-lg-6 col-md-12">
                                 <label>Email*</label>
-                                <input type="text" name="email" class="form-control" style="padding:8px">
+                                <input type="text" name="email" value="{{ old('email') }}" class="form-control" style="padding:8px">
                             </div>
                             <div class="form-group col-lg-6 col-md-12">
                                 <label>Fax*</label>
-                                <input type="text" name="fax" class="form-control" style="padding:8px">
+                                <input type="text" name="fax" value="{{ old('fax') }}" class="form-control" style="padding:8px">
                             </div>
                         </div>
                         <hr />
@@ -153,8 +153,23 @@
                         </div>
                         <div class="form-group form-inline">
                             <div class="form-group col-lg-12 col-md-12">
-                                <textarea class="form-control" name="inhouse_requirements" style="padding:0px 12px;min-height:200px;"></textarea>
+                                <textarea class="form-control" name="inhouse_requirements" style="padding:0px 12px;min-height:200px;">{{Request::old('inhouse_requirements')}}</textarea>
                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="form-group col-md-4">
+                                <div class="captcha">
+                                    <span>{!! captcha_img() !!}</span>
+                                    <button type="button" class="btn btn-success"><i class="fa fa-refresh" id="refresh"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="form-group col-md-4">
+                                <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha"></div>
                         </div>
                         <button type="submit" class="mt-40 text-uppercase genric-btn primary text-center">Submit</button>
                     </form>

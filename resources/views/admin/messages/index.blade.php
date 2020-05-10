@@ -40,9 +40,9 @@
                 <th>Action</th>
                   </tr>
                   </thead>
-                  @foreach($messages as $index=> $message)
+                
                   <tbody>
-
+                  @foreach($messages as $index=> $message)
                       <tr>
                       <td>{{$index+1}}</td>
                           <td> {{$message->sender_name}} </td>
@@ -62,7 +62,8 @@
 									</form>                          </td>
                       </tr>
 
-                  </tbody>
+               
+           
                   <!-- View Messages -->
 <div class="modal fade" id="addSubCat{{ $message->id }}" tabindex="-1" role="dialog" aria-labelledby="addSubCat">
         <div class="modal-dialog modal-lg " role="document">
@@ -101,6 +102,7 @@
   <!-- /Add Sub Modal -->
 
                   @endforeach
+                  </tbody>
               </table>
           </div>
       </div>

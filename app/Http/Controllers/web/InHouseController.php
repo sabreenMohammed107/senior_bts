@@ -29,6 +29,7 @@ class InHouseController extends Controller
 
     public function registerApplicantsHouse(Request $request)
     {
+       
         $applicant_data['course_id']=$request->get('course_id');
         $applicant_data['salut_id']=$request->get('salut_id');
         $applicant_data['name']=$request->get('name');
@@ -48,6 +49,11 @@ class InHouseController extends Controller
         $applicant_data['register_round_id']=$request->get('register_round_id');
         $applicant_data['applicant_type_id']=3;
         $applicant_id =Applicant::create($applicant_data);
+
+        $request->validate([
+          
+            'captcha' => 'required|captcha'
+        ]);
         $emails = ['senior.steps.info@gmail.com','info@btsconsultant.com','nasser@btsconsultant.com'];
  
         \Mail::to($emails)->send(new QuickEnqueryNotification($applicant_id));

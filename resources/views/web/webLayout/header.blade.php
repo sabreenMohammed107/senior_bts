@@ -3,7 +3,7 @@
 	<div class="header-top">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 col-sm-6 col-8 header-top-left no-padding">
+				<div class="col-lg-6 col-sm-4 col-8 header-top-left no-padding">
 					<ul>
 						<li><a href="https://www.facebook.com/Best-Technology-Solutions-101762614785390/" target="_blank" ><i class="fab fa-facebook-f"></i></a></li>
 						<li><a href="https://twitter.com/bts_consultants" target="_blank"><i class="fab fa-twitter"></i></a></li>
@@ -12,11 +12,11 @@
 						<li><a href="https://www.instagram.com/best_technology_solutions/" target="_blank" ><i class="fab fa-instagram"></i></a></li>
 					</ul>
 				</div>
-				<div class="col-lg-6 col-sm-6 col-4 header-top-right no-padding ">
+				<div class="col-lg-6 col-sm-8 col-4 header-top-right no-padding ">
 				
-					<a href="{{ route('contactus') }}" id="xx"><span class="lnr "></span> <span class="text">
+					<a href="{{ route('contactus') }}" id="xx"><span class="lnr lnr-phone-handset"></span> <span class="text">
 					<i class="fas fa-phone" style="opacity:0.9"></i> {{$branch->office_phone}}</span></a>
-					<a href="{{ route('contactus') }}" id="yy"><span class="lnr "></span> <span class="text">
+					<a href="{{ route('contactus') }}" id="yy"><span class="lnr lnr-envelope"></span> <span class="text">
 					<i class="far fa-envelope" style="opacity:0.9"></i> {{$branch->email}}
 					</span></a>
 					<a href="{{ route('contactus') }}" id="zz"><span class="lnr lnr-whatsapp"></span> <span class="text">
@@ -87,9 +87,11 @@
 					<?php 
 						$catId=4;
 						$sub=4;
+						$online=6;
 						?>
 					
 					<li><a href='{{url ("/courses/$catId/$catId/date") }}' style="font-size:16px">البرامج العربية</a></li>
+					<li><a href='{{url ("/courses/$online/$online/date") }}' >Online Courses</a></li>
 					<li><a href="{{ route('contactus') }}">CONTACT US</a></li>
 					<li class="menu-has-children">
 						<a href="">JOIN US</a>
@@ -111,6 +113,15 @@
 	
 
 @endif
+@if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div><br />
+                        @endif
 </header>
 
 <!-- End Header -->

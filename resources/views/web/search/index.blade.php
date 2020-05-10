@@ -42,7 +42,7 @@
 						<tr>
                     <td style="width:25%;">
                         <div class="">
-                            <img class="img-fluid" src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}" alt="" style="border-radius:.5rem;padding-top:10px;max-height:90px">
+                            <img class="img-fluid" src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}" alt="" style="border-radius:.5rem;padding-top:10px;height:120px;width:200px">
                         </div>
                     </td>
                     <td style="width:60%;">

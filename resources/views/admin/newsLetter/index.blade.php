@@ -37,9 +37,9 @@
 	<th>Action</th>
 </tr>
                     </thead>
-                    @foreach($letters as $index => $letter)
+                 
                     <tbody>
-
+                    @foreach($letters as $index => $letter)
                       <tr>
 					  	<td>{{ $index +1 }}</td>
                         <td><p>{{ $letter->email}}</p></td>
@@ -62,7 +62,7 @@
                         </td>
                       </tr>
 
-                    </tbody>
+
                     <div class="modal fade" id="editTitle{{ $letter->id }}" tabindex="-1" role="dialog" aria-labelledby="editTitle">
 
 <div class="modal-dialog modal-lg " role="document">
@@ -106,6 +106,8 @@
   </div>
 </div>
 @endforeach
+
+</tbody>
                   </table>
                 </div>
               </div>

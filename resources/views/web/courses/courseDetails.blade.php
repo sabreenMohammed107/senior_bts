@@ -278,8 +278,9 @@
                             <?php
                             
                             $courseId=$course->id;
-                            $url='http://test.btsconsultant.com/public/courseDetails/'.$courseId;
+                            $url='https://btsconsultant.com/courseDetails/'.$courseId;
                             ?>
+                           
                             <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode($url) }}"  style="padding:3px 7px;background-color:#777" target="popup" 
   onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ urlencode($url) }}','popup','width=600,height=600'); return false;"><i class="fab fa-facebook-f" style="color:#fff"></i></a>
                             <a href="https://twitter.com/intent/tweet?url={{ urlencode($url) }}" style="padding:3px 7px;background-color:#777" target="popup" 
